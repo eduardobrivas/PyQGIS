@@ -2,7 +2,7 @@ import processing
 import os
 
 # Defina a pasta de entrada
-pasta_entrada = r'C:\Users\eduardo.rivas\OneDrive - ARAUCO\2023\CAR_MS\47- Faz. Santa Gilda da Pedra Branca\CARMS0026766_INSCRITO'
+pasta_entrada = r'---------'
 
 # Lista todos os arquivos na pasta de entrada com a extensão .shp
 arquivos_shp = [f for f in os.listdir(pasta_entrada) if f.endswith('.shp')]
@@ -11,7 +11,7 @@ arquivos_shp = [f for f in os.listdir(pasta_entrada) if f.endswith('.shp')]
 target_crs = 'EPSG:31982'
 
 # Crie a pasta de saída como subpasta da pasta de entrada
-pasta_saida = os.path.join(pasta_entrada, 'reprojetados')
+pasta_saida = os.path.join(os.path.dirname(pasta_entrada), 'ATUALIZADO')
 
 # Certifique-se de que a pasta de saída exista, se não, crie-a
 if not os.path.exists(pasta_saida):
