@@ -84,5 +84,42 @@ with Timer() as timer:
 ```
 + Demonstração de como usar a classe **Timer** com o bloco **with**. O tempo inicial é impresso, e o tempo decorrido é automaticamente impresso quando o bloco **with** é concluído.
 
+# Avaliação Temporal em multiplos Blocos 
 
+Para medir o tempo de execução de blocos de código específicos, você pode incorporar a lógica do **Timer** em cada bloco usando a instrução **with**. Aqui está um exemplo de como você pode fazer isso:
 
+```py
+from time import perf_counter, localtime, strftime
+
+class Timer:
+    def __init__(self, block_name="Bloco"):
+        self.block_name = block_name
+
+    def __enter__(self):
+        self.start_time = perf_counter()
+        return self
+
+    def __exit__(self, *args):
+        self.end_time = perf_counter()
+        elapsed_time = self.end_time - self.start_time
+        self.print_elapsed_time(elapsed_time)
+
+    def print_elapsed_time(self, elapsed_time):
+        if elapsed_time <= 60:
+            time_str = '{0:.1f}s'.format(elapsed_time)
+        elif elapsed_time <= 3600:
+            time_str = '{0:.1f}m'.format(elapsed_time / 60)
+        else:
+            time_str = '{0:.2f}h'.format(elapsed_time / 3600)
+
+        print('Tempo decorrido no {}: {}'.format(self.block_name, time_str))
+
+# Exemplo de uso
+with Timer("Bloco 1") as timer1:
+    # Seu primeiro bloco de código
+    # ...
+
+with Timer("Bloco 2") as timer2:
+    # Seu segundo bloco de código
+    # ...
+```
