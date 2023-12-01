@@ -1,4 +1,4 @@
-# Timer Python QGIS Eficiente
+# Timer Python QGIS Eficiente 
 Medir e exibir o tempo de execução de código em Python de maneira simples e eficaz.
 ```py
 from time import perf_counter, localtime, strftime
