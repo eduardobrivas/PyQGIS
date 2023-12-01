@@ -31,3 +31,9 @@ with Timer() as timer:
 
 # O tempo é automaticamente impresso ao sair do bloco 'with'
 ```
+## Importações:
+```py
+from time import perf_counter, localtime, strftime
+```
++ **perf_counter**: Uma função que fornece um contador de alta resolução para medir o tempo decorrido.
++ **localtime, strftime**: Funções para obter e formatar a data e hora local.
