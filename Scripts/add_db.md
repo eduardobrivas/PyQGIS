@@ -1,3 +1,4 @@
+```py
 from qgis.core import QgsDataSourceUri, QgsVectorLayer, QgsProject, QgsCoordinateReferenceSystem
 import pyodbc
 
@@ -60,3 +61,4 @@ layer_name = "AREA_PRODUTIVA_evw"  # Nome da camada
 
 # Executa a função para carregar a camada
 load_vector_layer_auto(host, dbname, username, password, schema, layer_name)
+```
